@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.cyan,
       ),
       home: HomePage(),
     );
@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
         title: const Text("Marketplace"),
       ),
       body: Center(
-        child: Wrap(
+        child: Row(
           
           children: <Widget>[BuilderCon(), Marketplace()],
         ),

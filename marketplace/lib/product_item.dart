@@ -6,26 +6,47 @@ class ProductItem extends StatelessWidget {
   final int pret;
   final String linkImg;
 
-  ProductItem(
-      this.id, this.title, this.pret, this.linkImg);
+  ProductItem(this.id, this.title, this.pret, this.linkImg);
 
   @override
   Widget build(BuildContext context) {
+    double x = MediaQuery.of(context).size.width * 30 / 100 * 15 / 100;
     return Container(
       padding: const EdgeInsets.all(8),
-      child: Wrap(
-        alignment: WrapAlignment.center,
-        
-
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.network(linkImg),
-          Text(title),
-          Text('$pret'),
-          FloatingActionButton(
-            backgroundColor: Colors.cyan,
-            onPressed: null,
-          child: Center(child: Text('Add')),),
+          Expanded(
+            child: Container(
+              width: x,
+              height: x,
+              child: Image.network(linkImg),
+            ),
+          ),
+          Expanded(
+            child: Text(
+              title,
+              softWrap: true,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+          Expanded(
+            child: Center(child: Text((() {
+              if (pret != 0) {
+                return "\$$pret";
+              }
 
+              return "ERR";
+            })())),
+          ),
+          Expanded(
+              child: Center(
+            child: FloatingActionButton(
+              onPressed: null,
+              child: Center(child: Text('Add')),
+            ),
+          ))
         ],
       ),
     );
