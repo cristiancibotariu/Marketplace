@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:marketplace/builder.dart';
 import 'package:marketplace/marketplace.dart';
 
 void main() {
@@ -34,7 +35,10 @@ class _HomePageState extends State<HomePage> {
         title: const Text("Marketplace"),
       ),
       body: Center(
-        child: Marketplace(),
+        child: Wrap(
+          
+          children: <Widget>[BuilderCon(), Marketplace()],
+        ),
       ),
     );
   }
