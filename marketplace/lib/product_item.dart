@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:marketplace/product_item_expanded.dart';
 
 class ProductItem extends StatelessWidget {
   final String id;
@@ -14,8 +15,19 @@ class ProductItem extends StatelessWidget {
     return Container(
         padding: const EdgeInsets.all(8),
         child: TextButton(
-          onPressed: null,
+          onPressed: () {
+            showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return ProductItemExpanded(
+                      this.id, this.title, this.pret, this.linkImg);
+                });
+          },
+          style:
+              TextButton.styleFrom(textStyle: TextStyle(color: Colors.black)),
+          // onPressed: () => ProductItemExpanded(this.id, this.title, this.pret, this.linkImg),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Expanded(
