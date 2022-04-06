@@ -12,43 +12,46 @@ class ProductItem extends StatelessWidget {
   Widget build(BuildContext context) {
     double x = MediaQuery.of(context).size.width * 30 / 100 * 15 / 100;
     return Container(
-      padding: const EdgeInsets.all(8),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Expanded(
-            child: Container(
-              width: x,
-              height: x,
-              child: Image.network(linkImg),
-            ),
-          ),
-          Expanded(
-            child: Text(
-              title,
-              softWrap: true,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-            ),
-          ),
-          Expanded(
-            child: Center(child: Text((() {
-              if (pret != 0) {
-                return "\$$pret";
-              }
+        padding: const EdgeInsets.all(8),
+        child: TextButton(
+          onPressed: null,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                child: Container(
+                  width: x,
+                  height: x,
+                  child: Image.network(linkImg),
+                ),
+              ),
+              Expanded(
+                child: Text(
+                  title,
+                  softWrap: true,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+              Expanded(
+                child: Center(child: Text((() {
+                  if (pret != 0) {
+                    return "\$$pret";
+                  }
 
-              return "ERR";
-            })())),
+                  return "ERR";
+                })())),
+              ),
+              const Expanded(
+                  child: Center(
+                child: IconButton(
+                  onPressed: null,
+                  icon: Icon(Icons.favorite),
+                  color: Colors.red,
+                ),
+              ))
+            ],
           ),
-          Expanded(
-              child: Center(
-            child: FloatingActionButton(
-              onPressed: null,
-              child: Center(child: Text('Add')),
-            ),
-          ))
-        ],
-      ),
-    );
+        ));
   }
 }
