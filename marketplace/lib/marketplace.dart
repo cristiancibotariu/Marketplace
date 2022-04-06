@@ -23,8 +23,6 @@ class _MarketplaceState extends State<Marketplace> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: MediaQuery.of(context).size.width * 30 / 100,
-        height: MediaQuery.of(context).size.height * 90 / 100,
         child: Scaffold(
           body: Center(
             child: ListView(

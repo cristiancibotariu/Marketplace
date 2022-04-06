@@ -36,8 +36,16 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Center(
         child: Row(
-          
-          children: <Widget>[BuilderCon(), Marketplace()],
+          children: <Widget>[
+            Container(
+                width: MediaQuery.of(context).size.width * 70 / 100,
+                height: MediaQuery.of(context).size.height * 90 / 100,
+                child: BuilderCon()),
+            Container(
+                width: MediaQuery.of(context).size.width * 30 / 100,
+                height: MediaQuery.of(context).size.height * 90 / 100,
+                child: Marketplace())
+          ],
         ),
       ),
     );

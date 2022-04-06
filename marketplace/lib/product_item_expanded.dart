@@ -12,53 +12,60 @@ class ProductItemExpanded extends StatelessWidget {
   Widget build(BuildContext context) {
     // double x = MediaQuery.of(context).size.width * 30 / 100 * 15 / 100;
     double y = MediaQuery.of(context).size.height * 80 / 100;
+    double z = MediaQuery.of(context).size.height * 15 / 100;
     return AlertDialog(
-        contentPadding: EdgeInsets.all(8),
+        insetPadding: EdgeInsets.fromLTRB(z, z, z, z),
+        contentPadding: EdgeInsets.all(10),
+        actionsAlignment: MainAxisAlignment.center,
+        // actionsPadding: EdgeInsetsGeometry.infinity,
+        actions: [
+          Expanded(
+              child: FloatingActionButton(
+                  onPressed: null,
+                  child: Icon(
+                    Icons.favorite,
+                  ))),
+          Expanded(
+              child: FloatingActionButton(
+                  onPressed: null, child: Icon(Icons.add))),
+        ],
         content: Center(
             child: Container(
                 width: y,
-                height: y,
+                // height: y,
                 child: Expanded(
                     child: ListView(
                   children: [
                     Expanded(
                       child: Text(
-                        title,
+                        title + '\n',
                         softWrap: true,
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
                     Expanded(
+                        child: Text(
+                      '\n\$$pret\n',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.red),
+                    )),
+                    Expanded(
                       child: Container(
-                        width: MediaQuery.of(context).size.height * 80 / 100 * 80 / 100 ,
-                        height: MediaQuery.of(context).size.height * 80 / 100 * 80 / 100 ,
+                        width: MediaQuery.of(context).size.width *
+                            50 /
+                            100 *
+                            80 /
+                            100,
+                        height: MediaQuery.of(context).size.height *
+                            50 /
+                            100 *
+                            80 /
+                            100,
                         child: Image.network(linkImg),
                       ),
                     ),
-                    const Expanded(child: Text('descriere')),
-                    Expanded(
-                        child: Container(
-                      alignment: Alignment.center,
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Expanded(
-                                child: Text(
-                              '\$$pret',
-                              textAlign: TextAlign.center,
-                            )),
-                            Expanded(
-                                child: FloatingActionButton(
-                                    onPressed: null,
-                                    child: Icon(
-                                      Icons.favorite,
-                                    ))),
-                            Expanded(
-                                child: FloatingActionButton(
-                                    onPressed: null, child: Icon(Icons.add))),
-                          ]),
-                    ))
+                    const Expanded(child: Text('\ndescriere\n')),
                   ],
                 )))));
     // TextButton(
