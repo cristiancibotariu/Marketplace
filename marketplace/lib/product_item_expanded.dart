@@ -21,13 +21,16 @@ class ProductItemExpanded extends StatelessWidget {
         actions: [
           Expanded(
               child: FloatingActionButton(
+                  onPressed: null, child: Icon(Icons.add))),
+          Expanded(
+              child: FloatingActionButton(
                   onPressed: null,
                   child: Icon(
                     Icons.favorite,
                   ))),
           Expanded(
               child: FloatingActionButton(
-                  onPressed: null, child: Icon(Icons.add))),
+                  onPressed: Navigator.of(context).pop, child: Icon(Icons.close))),
         ],
         content: Center(
             child: Container(
