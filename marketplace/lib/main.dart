@@ -32,8 +32,77 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Marketplace"),
-      ),
+          elevation: 0,
+          toolbarHeight: 100,
+          backgroundColor: Colors.transparent,
+          title: TextButton(
+            onPressed: null,
+            child: const Image(
+              image: AssetImage('assets/logo_smart.png'),
+              height: 90,
+              fit: BoxFit.cover,
+            ),
+          ),
+          actions: [
+            ButtonBar(
+              children: [
+                Expanded(
+                    child: TextButton(
+                        style: TextButton.styleFrom(
+                            textStyle: TextStyle(color: Colors.black)),
+                        onPressed: null,
+                        child: Center(
+                          child: Text('Home'),
+                        ))),
+                Expanded(
+                    child: TextButton(
+                        style: TextButton.styleFrom(
+                            textStyle: TextStyle(color: Colors.black)),
+                        onPressed: null,
+                        child: Center(
+                          child: Text('Forum'),
+                        ))),
+                Expanded(
+                    child: TextButton(
+                        style: TextButton.styleFrom(
+                            textStyle: TextStyle(color: Colors.black)),
+                        onPressed: null,
+                        child: Center(
+                          child: Text('SHB'),
+                        ))),
+                Expanded(
+                    child: TextButton(
+                        style: TextButton.styleFrom(
+                            textStyle: TextStyle(color: Colors.black)),
+                        onPressed: null,
+                        child: Center(
+                          child: Text('About'),
+                        ))),
+                Expanded(
+                    child: TextButton(
+                        style: TextButton.styleFrom(
+                            textStyle: TextStyle(color: Colors.black)),
+                        onPressed: null,
+                        child: Center(
+                          child: Text('Contact Us'),
+                        ))),
+                Expanded(
+                    child: Container(
+                        height: 45,
+                        decoration: BoxDecoration(
+                            color: Colors.cyan,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: TextButton(
+                            style: TextButton.styleFrom(
+                                textStyle: TextStyle(color: Colors.black)),
+                            onPressed: null,
+                            child: Center(
+                              child: Text('Sign Up'),
+                            )))),
+              ],
+            )
+          ],
+        ),
       body: Center(
         child: Row(
           children: <Widget>[
