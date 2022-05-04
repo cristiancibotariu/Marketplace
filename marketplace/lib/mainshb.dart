@@ -3,44 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:homepage/about_us.dart';
 import 'package:homepage/homepage.dart';
 import 'package:homepage/marketplace.dart';
-import 'package:homepage/product_item.dart';
 import 'package:homepage/shb.dart';
 // import 'package:simple_gradient_text/simple_gradient_text.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MyHomePageSHB extends StatefulWidget {
+  MyHomePageSHB();
+  // final String title;
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Smart House Builder',
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const MyHomePage(title: 'Smart House Builder'),
-        // ProductItem.routeName: (context) => ProductItem(_toggleFavorite),
-      },
-      theme: ThemeData(
-        primarySwatch: Colors.cyan,
-      ),
-    );
-  }
+  State<MyHomePageSHB> createState() => _MyHomePageSHBState();
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _selectedIndex = 0;
+class _MyHomePageSHBState extends State<MyHomePageSHB> {
+  int _selectedIndex = 1;
 
   static List<Widget> _widgetOptions = <Widget>[
     HomePage(),
@@ -64,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
           toolbarHeight: 100,
           backgroundColor: Colors.transparent,
           title: TextButton(
-            onPressed: () {},
+            onPressed: () => changeScreen(0),
             child: const Image(
               image: AssetImage('assets/logo_smart.png'),
               height: 90,
