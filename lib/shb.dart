@@ -15,7 +15,6 @@ class _SHBState extends State<SHB> {
 
   static List<Widget> _widgetOptions = <Widget>[
     Marketplace(),
-    Schematics()
   ];
 
   void changeScreen(int index) {
@@ -44,7 +43,10 @@ class _SHBState extends State<SHB> {
                     children: [
                       TextButton(
                           onPressed: () => changeScreen(0),
-                          child: Text('Marketplace', style: TextStyle(color: Colors.black),),
+                          child: Text(
+                            'Marketplace',
+                            style: TextStyle(color: Colors.black),
+                          ),
                           style: ButtonStyle(
                               elevation: MaterialStateProperty.all(1))),
                       Padding(
@@ -53,13 +55,15 @@ class _SHBState extends State<SHB> {
                       )),
                       TextButton(
                           onPressed: () => changeScreen(1),
-                          child: Text('Schematics', style: TextStyle(color: Colors.black),),
+                          child: Text(
+                            'Schematics',
+                            style: TextStyle(color: Colors.black),
+                          ),
                           style: ButtonStyle(
                               elevation: MaterialStateProperty.all(1))),
                     ],
                   ),
-                  Expanded(child: 
-                  _widgetOptions.elementAt(_selectedIndex))
+                  Expanded(child: _widgetOptions.elementAt(_selectedIndex))
                 ]))
           ],
         ),
