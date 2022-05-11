@@ -10,6 +10,8 @@ import 'package:homepage/models/schematic.dart';
 import 'package:homepage/product_item.dart';
 import 'package:homepage/schematics_item.dart';
 
+import 'forum/Utilities.dart';
+
 class Marketplace extends StatefulWidget {
   Marketplace();
 
@@ -63,23 +65,7 @@ class _MarketplaceState extends State<Marketplace> {
       body: Column(children: [
         Container(
             child: Column(children: [
-          ListTile(
-              title: TextField(
-                controller: TextEditingController(text: ''),
-                decoration: InputDecoration(
-                  // prefixIcon: Icon(Icons.search),
-                  border: OutlineInputBorder(),
-                  contentPadding: EdgeInsets.all(8.0),
-                  hintText: 'Search',
-                ),
-              ),
-              trailing: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  new IconButton(
-                      onPressed: null, icon: Icon(Icons.search_outlined))
-                ],
-              )),
+          SearchBar(),
           Center(
             child: TextButton(
                 onPressed: null,

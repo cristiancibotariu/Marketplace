@@ -4,22 +4,17 @@ import './models/schematic.dart';
 const DUMMY_SCHEMATICS = const [
   Schematic(
     id: '0',
-    title: 'Smart Bulb',
+    title: 'Wall',
+    linkImg: 'assets/schematics/wall.png',
   ),
   Schematic(
     id: '1',
-    title: 'Smart Bulb',
+    title: 'Door',
+    linkImg: 'assets/schematics/door.png',
   ),
   Schematic(
     id: '2',
-    title: 'Smart Bulb',
-  ),
-  Schematic(
-    id: '3',
-    title: 'Smart Bulb',
-  ),
-  Schematic(
-    id: '4',
-    title: 'Smart Bulb',
+    title: 'Window',
+    linkImg: 'assets/schematics/window.png',
   ),
 ];

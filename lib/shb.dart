@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:homepage/builder.dart';
+import 'package:homepage/dummy_schematics.dart';
 import 'package:homepage/marketplace.dart';
 import 'package:homepage/schematics.dart';
 
@@ -15,6 +16,7 @@ class _SHBState extends State<SHB> {
 
   static List<Widget> _widgetOptions = <Widget>[
     Marketplace(),
+    AllSchematics(DUMMY_SCHEMATICS)
   ];
 
   void changeScreen(int index) {

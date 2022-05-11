@@ -35,10 +35,12 @@ class SchematicItemExpanded extends StatelessWidget {
                     child: ListView(
                   children: [
                     Expanded(
-                      child: Text(
-                        title + '\n',
-                        softWrap: true,
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                      child: Center(
+                        child: Text(
+                          title + '\n',
+                          softWrap: true,
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ),
                     Expanded(
@@ -56,7 +58,7 @@ class SchematicItemExpanded extends StatelessWidget {
                         child: Image.network(linkImg),
                       ),
                     ),
-                    const Expanded(child: Text('\ndescriere\n')),
+                    const Expanded(child: Center(child: Text('\ndescriere\n'))),
                   ],
                 )))));
     // TextButton(
