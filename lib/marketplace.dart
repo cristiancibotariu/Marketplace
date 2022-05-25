@@ -10,7 +10,7 @@ import 'package:homepage/models/schematic.dart';
 import 'package:homepage/product_item.dart';
 import 'package:homepage/schematics_item.dart';
 
-import 'forum/Utilities.dart';
+import 'forum/utilities/Utilities.dart';
 
 class Marketplace extends StatefulWidget {
   Marketplace();
@@ -23,6 +23,8 @@ class _MarketplaceState extends State<Marketplace> {
   List<Product> _allProducts = DUMMY_PRODUCTS;
   List<Schematic> _allSchematics = DUMMY_SCHEMATICS;
   List<Product> _favoriteProducts = [];
+
+  
 
   int _selectedIndex = 0;
 

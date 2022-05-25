@@ -5,8 +5,8 @@ import 'package:homepage/homepage.dart';
 import 'package:homepage/marketplace.dart';
 import 'package:homepage/forum/Forum.dart';
 import 'package:homepage/shb.dart';
-
-// import 'package:simple_gradient_text/simple_gradient_text.dart';
+import 'package:homepage/contact_us.dart';
+import 'package:homepage/signup.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,12 +39,14 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
-  static List<Widget> _widgetOptions = <Widget>[
+  static final List<Widget> _widgetOptions = <Widget>[
     HomePage(),
     SHB(),
     Marketplace(),
-    Forum(),
-    AboutUs(),
+    const Forum(),
+    const ContactUs(),
+    const AboutUs(),
+    SignUp(),
   ];
 
   void changeScreen(int index) {
@@ -103,16 +105,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 TextButton(
                     style: TextButton.styleFrom(
                         textStyle: const TextStyle(color: Colors.black)),
-                    onPressed: () => changeScreen(4),
+                    onPressed: () => changeScreen(5),
                     child: const Center(
                       child: Text('About'),
                     )),
                 TextButton(
                     style: TextButton.styleFrom(
                         textStyle: const TextStyle(color: Colors.black)),
-                    onPressed: () => {
-                          //do something
-                        },
+                    onPressed: () => changeScreen(4),
                     child: const Center(
                       child: Text('Contact Us'),
                     )),
@@ -124,9 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: TextButton(
                         style: TextButton.styleFrom(
                             textStyle: const TextStyle(color: Colors.white)),
-                        onPressed: () => {
-                              //do something
-                            },
+                        onPressed: () => changeScreen(6),
                         child: const Center(
                           child: Text(
                             'Sign Up',
